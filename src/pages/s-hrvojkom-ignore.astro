@@ -1,20 +1,40 @@
 ---
-import { UniversalViewer } from "../components/uv"
-import Description from "../components/descriptions.astro"
+import { UniversalViewer } from "../components/uv";
+import Description from "../components/descriptions.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
 
-        <script type="text/javascript" src="https://cms-hrvojka.gov.hr/uploads/wt/7.1.17/widget.js"></script>
+        <script is:inline>
+            console.log("Tu sam");
 
-		<title>S Hrvojkom</title>
-	</head>
-	<body>
+            try {
+                Object.defineProperty(window.Node.prototype, "children", {
+                    get() {
+                        console.log("Postavili smo dicu");
+                        return window.Node.childNodes;
+                    },
+                });
+            } catch (e) {
+                console.error("Error mod prototype", e);
+            }
+
+            console.log("Object node", window.Node);
+        </script>
+
+        <script
+            type="text/javascript"
+            src="https://cms-hrvojka.gov.hr/uploads/wt/7.1.17/widget.js"
+        ></script>
+
+        <title>S Hrvojkom</title>
+    </head>
+    <body>
         <script>
             window.alert = (msg) => {
                 if (msg === "Unable to load manifest") {
@@ -26,19 +46,23 @@ import Description from "../components/descriptions.astro"
             };
         </script>
 
-		<h1 class="font-bold text-3xl">Primjer s Hrvojkom</h1>
+        <h1 class="font-bold text-3xl">Primjer s Hrvojkom</h1>
 
         <div class="p-2 w-full flex gap-4 underline">
             <a href="/bez-hrvojke">Primjer bez Hrvojke</a>
             <a href="/s-hrvojkom">Primjer s Hrvojkom</a>
-            <a href="/s-hrvojkom-ignore">Primjer s Hrvojkom i ignoriranjem greške</a>
+            <a href="/s-hrvojkom-ignore"
+                >Primjer s Hrvojkom i ignoriranjem greške</a
+            >
         </div>
 
-        <div class='p-2 border-blue-500 rounded-md w-[90vw]'>
-            <UniversalViewer manifestId='https://wellcomelibrary.org/iiif/b16659090/manifest' client:only />
+        <div class="p-2 border-blue-500 rounded-md w-[90vw]">
+            <UniversalViewer
+                manifestId="https://wellcomelibrary.org/iiif/b16659090/manifest"
+                client:only
+            />
         </div>
 
         <Description />
-	</body>
+    </body>
 </html>
-
