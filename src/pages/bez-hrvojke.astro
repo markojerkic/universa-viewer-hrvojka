@@ -1,0 +1,27 @@
+---
+import { UniversalViewer } from "../components/uv"
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Bez Hrvojke</title>
+	</head>
+	<body>
+		<h1 class="font-bold text-3xl">Primjer bez Hrvojke</h1>
+
+        <div class="p-2 w-full flex flex-col underline">
+            <a href="/bez-hrvojke">Primjer bez Hrvojke</a>
+            <a href="/s-hrvojkom">Primjer s Hrvojkom</a>
+            <a href="/s-hrvojkom-ignore">Primjer s Hrvojkom i ignoriranjem greške</a>
+        </div>
+
+        <div class='p-2 border-blue-500 rounded-md w-[90vw] h-[90vw]'>
+            <UniversalViewer manifestId='https://wellcomelibrary.org/iiif/b16659090/manifest' client:only />
+        </div>
+	</body>
+</html>
