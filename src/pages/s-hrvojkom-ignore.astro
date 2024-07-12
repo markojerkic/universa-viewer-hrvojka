@@ -1,6 +1,6 @@
 ---
 import { UniversalViewer } from "../components/uv"
-
+import Description from "../components/descriptions.astro"
 ---
 
 <html lang="en">
@@ -28,15 +28,17 @@ import { UniversalViewer } from "../components/uv"
 
 		<h1 class="font-bold text-3xl">Primjer s Hrvojkom</h1>
 
-        <div class="p-2 w-full flex flex-col underline">
+        <div class="p-2 w-full flex gap-4 underline">
             <a href="/bez-hrvojke">Primjer bez Hrvojke</a>
             <a href="/s-hrvojkom">Primjer s Hrvojkom</a>
             <a href="/s-hrvojkom-ignore">Primjer s Hrvojkom i ignoriranjem greške</a>
         </div>
 
-        <div class='p-2 border-blue-500 rounded-md w-[90vw] h-[90vw]'>
+        <div class='p-2 border-blue-500 rounded-md w-[90vw]'>
             <UniversalViewer manifestId='https://wellcomelibrary.org/iiif/b16659090/manifest' client:only />
         </div>
+
+        <Description />
 	</body>
 </html>
 

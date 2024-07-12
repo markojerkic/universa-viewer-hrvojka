@@ -1,8 +1,8 @@
-# Primjer korištenja UniversalViewer-a i Hrvojke
+<h1 class="font-bold text-3xl">Opis</h1>
 
 <p>Svi primjeri koriste React s istom verzijom UniversalViewer-a kao i eKultura.</p>
 
-## Primjer bez Hrvojke
+<a href="/bez-hrvojke" class="font-bold text-xl py-2">Primjer bez Hrvojke</a>
 
 Ovaj primjer koristi samo importanu komponentu koja rendera UniversalViewer.
 Ova komponenta je identična onoj koju koristimo interno u eKultura projektu.
@@ -16,7 +16,7 @@ Za ovaj prvi primjer sve uredno radi.
 </div>
 ```
 
-## Primjer s Hrvojkom
+<a href="/s-hrvojkom"  class="font-bold text-xl py-2">Primjer s Hrvojkom</a>
 
 Ovaj primjer koristi istu komponentu, ali u HTML-u je navedeno da se importa skripta Hrvojke.
 Tu čak nije ni dodana skripta koja je potrebna da se inicijalizira prevoditelj.
@@ -41,7 +41,7 @@ Projekt eKultura uhvati tu grešku te onda prikaže samo indeksnu sličicu umjes
 </html>
 ```
 
-## Primjer s Hrvojkom i ignoriranjem greške
+<a href="/s-hrvojkom-ignore"  class="font-bold text-xl py-2">Primjer s Hrvojkom i ignoriranjem greške</a>
 
 Treći primjer je isti kao i drugi, samo je dodana skriptica koja uhvati UniversalViewer grešku i ignorira je.
 ```js
@@ -54,5 +54,12 @@ window.alert = (msg) => {
     }
 };
 ```
+
+
+<a href="https://github.com/markojerkic/universa-viewer-hrvojka" class="font-bold text-xl py-2">Izvorni kod</a>
+
+Izvorni kod je dosupan na <a href="https://github.com/markojerkic/universa-viewer-hrvojka" class="underline">ovoj poveznici.</a>
 <br />
 Sve rute se nalaze u `src/pages`, UniversalViewer komponenta se nalazi u `src/components/uv.tsx`.
+
+
